@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2 Days 1 Night in Da Lat – Travel Blog</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* =====================
+       RESET & BASE
+    ====================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #f4f7f6 0%, #ffffff 100%);
+      color: #2c2c2c;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* =====================
+       HERO SECTION
+    ====================== */
+    .hero {
+      position: relative;
+      height: 90vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Screenshot-safe hero image */
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Dark overlay */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 2;
+    }
+
+    /* Text box */
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      background: rgba(0, 0, 0, 0.65);
+      padding: 32px 40px;
+      border-radius: 18px;
+      text-align: center;
+      max-width: 900px;
+      color: #fff;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      margin-bottom: 12px;
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      opacity: 0.95;
+    }
+
+    /* =====================
+       LAYOUT
+    ====================== */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    /* =====================
+       TRIP INFO
+    ====================== */
+    .trip-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-bottom: 90px;
+    }
+
+    .info-box {
+      background: #fff;
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    }
+
+    .info-box h3 {
+      color: #2f6f4e;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    /* =====================
+       SECTIONS
+    ====================== */
+    section {
+      margin-bottom: 100px;
+    }
+
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.3rem;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -12px;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #2f6f4e, #7fbf9b);
+      border-radius: 2px;
+    }
+
+    /* =====================
+       PLACE BLOCK
+    ====================== */
+    .place {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+
+    .place:nth-child(even) {
+      direction: rtl;
+    }
+
+    .place:nth-child(even) .place-content {
+      direction: ltr;
+    }
+
+    .place img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+    }
+
+    .place-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .fun-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #ffb703, #fb8500);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      margin-bottom: 12px;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    /* =====================
+       FOOTER
+    ====================== */
+    footer {
+      background: linear-gradient(135deg, #1b2f28, #0f1d18);
+      color: #cfd6d3;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      margin: 8px 0;
+    }
+
+    /* =====================
+       MOBILE
+    ====================== */
+    @media (max-width: 768px) {
+      .hero {
+        height: 70vh;
+      }
+
+      .hero-content {
+        padding: 24px;
+      }
+
+      .place {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="hero-media">
+    <img src="lunchview.jpg" alt="Da Lat forest and cafe view">
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>2 Days 1 Night in Da Lat</h1>
+    <p>From Pine Forest Camping to Pizza, Hot Pot & Nightlife</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="trip-info">
+    <div class="info-box"><h3>🕒 Time</h3><p>2 Days / 1 Night<br>Best in October</p></div>
+    <div class="info-box"><h3>🚗 Transport</h3><p>Motorbike, Grab, Taxi</p></div>
+    <div class="info-box"><h3>💰 Budget</h3><p>1,200,000 – 2,000,000 VND</p></div>
+    <div class="info-box"><h3>📍 Locations</h3><p>6 Main Spots</p></div>
+    <div class="info-box"><h3>🍜 Food Focus</h3><p>Local, Mountain, Herbal</p></div>
+  </div>
+
+  <section>
+    <h2>Day 1 – Food, Coffee & Forest</h2>
+
+    <!-- Breakfast -->
+    <div class="place">
+      <img src="breakfast.png" alt="Banh Uot Long Heo">
+      <div class="place-content">
+        <span class="fun-badge">✨ Must Try</span>
+        <h3>Bánh Ướt Lòng Gà</h3>
+        <div class="meta">🍜 Food · 💰 35k–50k · ⏰ Morning · 📍 Hẻm 202 Phan Đình Phùng, Phường 2, Đà Lạt, Lâm Đồng</div>
+        <p>A traditional Da Lat breakfast made with soft rice sheets and chicken parts. Warm, savory, and perfect for cool mornings.</p>
+      </div>
+    </div>
+
+    <!-- Coffee -->
+    <div class="place">
+      <img src="coffee1.jpg" alt="Morning Coffee Da Lat">
+      <div class="place-content">
+        <span class="fun-badge">☕ Chill Stop</span>
+        <h3>Morning Coffee with Market View</h3>
+        <div class="meta">☕ Drink · 💰 30k–60k · 🕗 7:00–22:30 · 📍 Cà phê Nga 2a Nguyễn Chí Thanh, Phường 1, Đà Lạt, Lâm Đồng</div>
+        <p>Vietnam is famous for phin coffee, but even if you don’t drink coffee, there are many great alternatives. We tried hot chocolate and black seed milk while enjoying the Da Lat Market view.</p>
+      </div>
+    </div>
+
+    <!-- Camping -->
+    <div class="place">
+      <img src="camping.jpg" alt="Forest Camping Da Lat">
+      <div class="place-content">
+        <span class="fun-badge">🌲 Nature Break</span>
+        <h3>Forest Camping & Lake View</h3>
+        <div class="meta">🏕️ Nature · 💰 80k/per Drink / 350k stay · 🚣 Kayak · 📍 Reo Camping Đ. Hoa Hồng, Phường 4, Đà Lạt, Lâm Đồng</div>
+        <p>You can stay overnight or simply visit during the day. We ordered a lemon drink, relaxed by the lake, and enjoyed the fresh pine forest air. Kayak rental is available.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Day 2 – Mountain Pizza, Hot Pot & Nightlife</h2>
+
+    <!-- Pizza -->
+    <div class="place">
+      <img src="pizza.png" alt="Charcoal Pizza Da Lat">
+      <div class="place-content">
+        <span class="fun-badge">🍕 Mountain Food</span>
+        <h3>Charcoal-Grilled Mountain Pizza</h3>
+        <div class="meta">🍕 Food · 💰 200k/per · 🕛 11:00–20:00 · 📍 Burrata Woodfired Pizza Hẻm 32 Đ. 3/4, Phường 3, Đà Lạt, Lâm Đồng</div>
+        <p>The road is long and a bit challenging, so Grab or taxi is recommended. The pizza is charcoal-grilled and served with real honey—close the jar unless you want bees joining your lunch.</p>
+      </div>
+    </div>
+
+    <!-- Hot Pot -->
+    <div class="place">
+      <img src="hotpot.png" alt="Herbal Chicken Hot Pot">
+      <div class="place-content">
+        <span class="fun-badge">🍲 Comfort Food</span>
+        <h3>Herbal Chicken Hot Pot</h3>
+        <div class="meta">🍲 Dinner · 💰 250k–400k · 🕖 17:00–22:00 · 📍 Mận 19 Lê Văn Tám, Phường 10, Đà Lạt, Lâm Đồng</div>
+        <p>The broth is naturally sweet and aromatic, combining chicken flavor with traditional Chinese herbs like ginseng, red dates, and goji berries. Perfect for cool evenings.</p>
+      </div>
+    </div>
+
+    <!-- Bar -->
+    <div class="place">
+      <img src="bar.jpg" alt="Da Lat Night Bar">
+      <div class="place-content">
+        <span class="fun-badge">🍸 Night Vibes</span>
+        <h3>Local Bar with DJ</h3>
+        <div class="meta">🍸 Nightlife · 💰 100k–200k · 🎶 DJ · 📍 DEEM 1 hẻm 20D Đường 3/4, Phường 3, Đà Lạt, Lâm Đồng</div>
+        <p>Great music, fun crowd, and creative cocktails. A relaxed but lively atmosphere to end your Da Lat trip.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Final Thoughts</h2>
+    <p>This 2 days 1 night Da Lat itinerary is ideal if you want to experience local food you can’t find elsewhere, peaceful forest views, unique mountain cafés, and cozy nightlife without stress.</p>
+  </section>
+</div>
+
+<footer>
+  <p>© 2026 Da Lat Travel Blog</p>
+  <p>Slow travel • Local food • Real experiences</p>
+</footer>
+
+</body>
+</html>
